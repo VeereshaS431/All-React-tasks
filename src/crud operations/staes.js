@@ -90,7 +90,13 @@ class Buttons extends Component {
             <div>
                 {
                 this.state.map((val)=>{
-                    
+                    return(
+                        <>
+                        <div>
+                            <img src={val.img}/>
+                        </div>
+                        </>
+                    )
                 })
             }
             </div>
