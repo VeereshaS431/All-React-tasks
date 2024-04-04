@@ -1,0 +1,44 @@
+.main{
+    display: flex;
+    justify-content: center;
+   flex-wrap: wrap;
+   flex-direction: row;
+   gap: 30px;
+   margin-top: 50px;
+
+}
+.cards{
+    display: flex;
+    width: 22%;
+    border: 1px solid black;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: rgb(153, 149, 80);
+}
+
+.cards:hover{
+    transform: scale(1.1) rotateY(360deg);
+    transition: all 1s ease-in-out;
+}
+
+
+
+img{
+   width: 250px;
+   height: 200px;
+}
+
+p{
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
+.btn{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
