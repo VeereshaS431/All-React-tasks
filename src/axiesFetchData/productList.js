@@ -1,6 +1,8 @@
 import { Component } from "react";
 import axios from 'axios';
 import "./productsstyle.css"
+import { Spinner } from "react-bootstrap";
+import CustomSpinner from "./spinner";
 
 
 class Products extends Component {
@@ -42,7 +44,7 @@ class Products extends Component {
                     "price": 55.99,
                     "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
                     "category": "men's clothing",
-                    "thumbnail": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+                    "images": ["https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg"],
                     "rating": {
                         "rate": 4.7,
                         "count": 500
@@ -66,7 +68,7 @@ class Products extends Component {
     render() {
         console.log(this.state.items)
         return (
-            <div>
+            <div className="center">
                 {
 
                     this.state.items.length > 0
@@ -77,11 +79,11 @@ class Products extends Component {
                                     console.log(val)
                                     return (
                                         <div className="cards">
-                                            <img src={val.thumbnail} alt={val.title}/>
+                                            <img src={val.images[0]} alt={val.title}/>
                                             <h2>{val.title}</h2>
                                             {/* <p>{val.description}</p> */}
                                             <h6>₹ {val.price}</h6>
-                                            <div className="btn">
+                                            <div className="btn1">
                                                 <button onClick={()=>this.Delete(val.id)}>Delete</button>
                                                 <button onClick={()=>this.Update(val.id)}>Update</button>
                                             </div>
@@ -91,9 +93,8 @@ class Products extends Component {
                             }
                         </div>
                         :
-                        
-                        <h1>loading</h1>
-                        
+          
+                        <CustomSpinner/>
                 }
     
             </div>
