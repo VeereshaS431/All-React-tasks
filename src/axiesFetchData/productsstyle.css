@@ -5,6 +5,29 @@
     align-items: center;
 }
 
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.totalsum{
+position: sticky;
+top: 10px;
+}
+
+.totalsum h1{
+    /* border: 1px solid black; */
+    width: 400px;
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px;
+    background-color: rgb(162, 249, 244);
+    border-radius: 10px;
+    font-size: 35px;
+  
+}
+
+
 .main{
     display: flex;
     justify-content: center;
@@ -17,7 +40,7 @@
 }
 .cards{
     display: flex;
-    width: 330px;
+    width: 300px;
     flex-direction: column;
     padding: 10px;
     align-items: center;
@@ -25,12 +48,6 @@
     background-color: rgb(130, 173, 173);
 
 }
-
-.cards:hover{
-    transform: scale(1.1) rotateY(360deg);
-    transition: all 1s ease-in-out;
-}
-
 
 
 img{
@@ -52,18 +69,22 @@ p{
 }
 .btn1{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     width: 100%;
     margin-bottom: 10px;
     margin-top: 10px;
+    gap: 10px;
 }
 
 .btn1 button{
-    width: 120px;
-    height: 35px;
+    width: 50px;
+    height: 30px;
     border: none;
     border-radius: 10px;
+    margin-left: 10px;
 }
+
+
 
 button:active{
     background-color: rgb(49, 49, 49);
