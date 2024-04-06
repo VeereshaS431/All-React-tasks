@@ -1,14 +1,16 @@
 import { Component } from "react";
 import axios from 'axios';
 import "./productsstyle.css"
-import { Spinner } from "react-bootstrap";
 import CustomSpinner from "./spinner";
+
+
 
 
 class Products extends Component {
 
     state = {
-        items: []
+        items: [],
+        dummyItem: []
     }
 
     componentDidMount() {
@@ -16,111 +18,140 @@ class Products extends Component {
     }
 
 
+
     fecthData = async () => {
         const result = await axios.get("https://dummyjson.com/products")
 
-
-        const result1 = result.data.products.map((val) => {
-            const data = { ...val, count: 1, totalPrice: val.price }
-            return data
-        })
-
         this.setState({
-            items: result1
+            items: result.data.products,
+            dummyItem: result.data.products
         })
 
     }
 
 
-    increment = (id) => {
-        const newItems = this.state.items.map((val) => {
-            if (id == val.id) {
-                val.count += 1
-                val.totalPrice = val.price * val.count
-                return val
-            }
-            else {
-                return val
-            }
-        })
 
-        this.setState({
-            items: newItems
-        })
+    LowToHigh = () => {
+
+        setTimeout(()=>{
+            this.setState({
+                items: this.state.dummyItem
+            })
+        },0)
+
+
+        setTimeout(()=>{
+            const result = this.state.items.sort((a, b) => a.price - b.price)
+            this.setState({
+                items: result
+            })
+        },100)
     }
 
-    decrement = (id) => {
-        const newItems = this.state.items.map((val) => {
-            if (id == val.id) {
-                if (val.count > 0) {
-                    val.count -= 1
-                    val.totalPrice = val.price * val.count
+    HighToLow = () => {
+        
+        setTimeout(()=>{
+            this.setState({
+                items: this.state.dummyItem
+            })
+        },0)
+       
 
-                    return val
-                }
-                else {
-                    return val
-                }
-            }
-            else {
-                return val
-            }
-        })
+        
+        
+        setTimeout(()=>{
+            const result = this.state.items.sort((a, b) => b.price - a.price)
+            this.setState({
+                items: result
+            })
+        },100)
+        
+    }
 
-        this.setState({
-            items: newItems
-        })
+    Range1To1000 = () => {
+
+        setTimeout(()=>{
+            this.setState({
+                items: this.state.dummyItem
+            })
+        },0)
+    
+
+
+        setTimeout(()=>{
+            const result = this.state.items.filter((val) => {
+                return val.price >= 1 && val.price <= 1000
+            })
+            this.setState({
+                items: result
+            })
+        },100)
 
     }
+
+    Range1000To2000 = () => {
+
+        setTimeout(()=>{
+            this.setState({
+                items: this.state.dummyItem
+            },()=>{
+                console.log(this.state.items)
+            })
+        },0)
+
+    
+        setTimeout(()=>{
+            const result = this.state.items.filter((val) => {
+                return val.price >= 1000 && val.price <= 2000
+            })
+
+            this.setState({
+                items: result
+            },()=>{
+                console.log(this.state.items)
+            })
+        },100)
+
+    }
+
+
 
 
 
     render() {
-        console.log(this.state.items)
         return (
             <div className="center">
 
-                {
 
+                {
                     this.state.items.length > 0
                         ?
-                        <div className="container">
-                            <div className="totalsum"><h1>Total Sum: ₹ <span>
-                                {
-                                    this.state.items.reduce((acc, val) => {
-                                        return acc + val.totalPrice
-                                    }, 0)
-                                }
-                            </span>
-                            </h1>
+
+                        <div className="main">
+                            <div className="btns">
+                                <button onClick={this.LowToHigh}>Low to High</button>
+                                <button onClick={this.HighToLow}>High to Low</button>
+                                <button onClick={this.Range1To1000}>₹1 - ₹1000</button>
+                                <button onClick={this.Range1000To2000}>₹1000 - ₹2000</button>
                             </div>
-                            <div className="main">
-                                {
-                                    this.state.items.map((val) => {
 
-                                        return (
-                                            <div className="cards">
-                                                <img src={val.images[0]} alt={val.title} />
-                                                <h2>{val.title}</h2>
-                                                <h6>₹ {val.price}</h6>
+                            <div className="mainContainer">
 
-                                                <div className="btn1">
-                                                    <button onClick={() => this.decrement(val.id)}><i class="fa-solid fa-minus"></i></button>
-                                                    <h4>{val.count}</h4>
-                                                    <button onClick={() => this.increment(val.id)}><i class="fa-solid fa-plus"></i></button>
-                                                </div>
+                            {
+                                this.state.items.map((val) => {
 
-                                                <div>
-                                                    <h4>Total: ₹ <span>{val.totalPrice}</span></h4>
-                                                </div>
-
-
-                                            </div>
-                                        )
-                                    })
-                                }
-                            </div>
+                                    return (
+                                        <div className="cards" key={val.id}>
+                                            <img src={val.images[0]} alt={val.title} />
+                                            <h2>{val.title}</h2>
+                                            <h6>₹ {val.price}</h6>
+                                        </div>
+                                    )
+                                })
+                            }
                         </div>
+                        </div>
+
                         :
 
                         <CustomSpinner />
