@@ -13,11 +13,11 @@ class Products extends Component {
 
     componentDidMount() {
         this.fecthData()
-
     }
 
+
     fecthData = async () => {
-        const result = await axios("https://dummyjson.com/products")
+        const result = await axios.get("https://dummyjson.com/products")
 
 
         const result1 = result.data.products.map((val) => {
@@ -97,7 +97,7 @@ class Products extends Component {
                             <div className="main">
                                 {
                                     this.state.items.map((val) => {
-                                        console.log(val)
+
                                         return (
                                             <div className="cards">
                                                 <img src={val.images[0]} alt={val.title} />
@@ -113,6 +113,7 @@ class Products extends Component {
                                                 <div>
                                                     <h4>Total: ₹ <span>{val.totalPrice}</span></h4>
                                                 </div>
+
 
                                             </div>
                                         )
