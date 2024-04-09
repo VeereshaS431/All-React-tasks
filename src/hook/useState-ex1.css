@@ -1,0 +1,54 @@
+.container1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(247, 207, 155);
+    padding: 50px;
+   row-gap:30px ;
+   background-color: #FFE6E6;
+   border-radius: 20px;
+   width: 50vw;
+   flex-direction: column;
+}
+.title h1{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+color: #7469B6;
+}
+.watch{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.timer{
+    display: flex;
+    border: 2px solid rgb(169, 164, 164);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    width: 150px;
+}
+.timer h6{
+    position: relative;
+    top: 10px;
+    font-size: 20px;
+    color:  #7469B6;
+
+}
+.timer h1{
+    color: #AD88C6;
+}
+
+.btns button{
+    width: 150px;
+    height: 40px;
+    font-size: 23px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 20px;
+    background-color: #AD88C6;
+}
+
+.btns button:active{
+    background-color:  #7469B6;
+}
