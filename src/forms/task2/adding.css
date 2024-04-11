@@ -1,0 +1,67 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+}
+
+.forms{
+    display: flex;
+   margin-top: 150px;
+}
+
+form{
+    display: flex;
+    column-gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+input{
+    width: 300px;
+    height: 35px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+form button{
+    height: 30px;
+    width: 120px;
+    border: none;
+    border-radius: 10px;
+}
+
+.cards{
+    display: flex;
+    margin-top: 50px;
+    flex-direction: column;
+}
+
+table,th,td{
+    border: 1px solid white;
+    border-collapse: collapse;
+    text-align: center;
+}
+table,th{
+    width: 40vw;
+}
+td,th{
+    color: #070F2B;
+    height: 50px;
+    font-size: 20px;
+}
+td button{
+    width: 80px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+}
+
+button:active{
+    background-color: #1B1A55;
+    color: white;
+}
+button{
+    font-size: 16px;
+}
