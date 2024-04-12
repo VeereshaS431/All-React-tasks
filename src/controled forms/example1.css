@@ -1,0 +1,100 @@
+.main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #92C7CF;
+    
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(124, 121, 121);
+    padding: 30px 100px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: #FBF9F1;
+}
+
+form {
+    display: flex;
+    row-gap: 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form .row {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: 280px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.errors1,
+.errors3,
+.errors4 {
+    position: absolute;
+    margin-top: 55px;
+}
+
+.errors5 {
+    position: absolute;
+    margin-top: 280px;
+}
+span{
+    color: red;
+}
+button{
+    width: 120px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: #AAD7D9;
+    font-weight: bold;
+}
+
+button:active{
+    background-color: #E5E1DA;
+    
+}
+
+.tables{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+table,td,th{
+    width: 40vw;
+    border-collapse: collapse;
+    font-size: 20px;
+}
+td,th{
+    text-align: center;
+}
+th{
+    border-bottom: 1px solid black;
+    
+}
+td{
+    border-bottom: 1px solid black;
+}
+
+.signin{
+    cursor: pointer;
+}
