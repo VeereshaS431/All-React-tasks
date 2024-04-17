@@ -94,8 +94,6 @@ const Products = () => {
 
     return (
         <>
-            {/* <NavbarExample cart={cart}/> */}
-
             <Navbar bg="dark" data-bs-theme="dark">
                 <Container>
                     <Navbar.Brand>Navbar</Navbar.Brand>
