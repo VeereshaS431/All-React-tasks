@@ -25,7 +25,10 @@
     background-color: rgb(171, 92, 92);
     color: white;
 }
-
+.add:active{
+    background-color: black;
+    color: white;
+}
 img{
     width: 250px;
     height: 250px;
