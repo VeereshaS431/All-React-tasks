@@ -1,0 +1,45 @@
+.main-container{
+    background-color: #86469C;
+}
+
+
+.form-container{
+    display: flex;
+    border: 1px solid rgb(203, 202, 202);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 35vw;
+    height: 45vh;
+    gap: 5px;
+    border-radius: 20px;
+    background-color: #BC7FCD;
+}
+
+#login-form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+    justify-content: center;
+    align-items: center;
+}
+.input-container{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+#email,#psw{
+    width: 250px;
+    border-radius: 5px;
+}
+#submit{
+    width: 120px;
+    border: none;
+    border-radius: 10px;
+    height: 30px;
+}
+.errMsg{
+    position: absolute;
+    margin-top: 55px;
+    color: red;
+}

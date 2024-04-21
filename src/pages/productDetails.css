@@ -1,0 +1,42 @@
+.eachproduct-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.eachproduct-card{
+    display: flex;
+    border: 1px solid black;
+    width: 60vw;
+    column-gap: 20px;
+    height: 70vh;
+
+}
+.eachproduct-img{
+    width: 400px;
+}
+.eachproduct-para{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 10px;
+    padding: 10px;
+}
+.eachproduct-desc{
+    text-align: center;
+}
+
+.eachproduct-add{
+    width: 150px;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    background-color: cadetblue;
+}
+
+.eachproduct-add:active{
+    background-color: black;
+    color: white;
+}

@@ -1,0 +1,19 @@
+.about-main{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about-Container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+}
+.para{
+    text-align: center;
+}
+.para-container{
+    width: 70vw;
+}

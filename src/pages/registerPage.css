@@ -1,0 +1,48 @@
+.main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.Register-container{
+    display: flex;
+    border: 1px solid rgb(176, 175, 175);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 35vw;
+    height: 70vh;
+    gap: 5px;
+    border-radius: 20px;
+    background-color: #BC7FCD;
+}
+
+#signup-form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+    justify-content: center;
+    align-items: center;
+}
+.input-container{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+#name,#emails,#psws,#cpsw{
+    width: 250px;
+    border-radius: 5px;
+}
+#sub{
+    width: 120px;
+    border: none;
+    border-radius: 10px;
+    height: 30px;
+}
+.errMsgs{
+    position: absolute;
+    margin-top: 278px;
+    color: red;
+}

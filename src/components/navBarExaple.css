@@ -1,6 +1,7 @@
 .navbar{
-    position: sticky;
+    position: sticky !important;
     top: 1px;
+    z-index: 2;
 }
 .navbar-nav{
     display: flex;
@@ -8,5 +9,45 @@
     margin-left: 30px;
 }
 .d-block{
-    height: 450px;
+    height: 92vh;
+}
+.user{
+    color: white;
+    font-size: 20px;
+    position: relative;
+    top: 3px;
+}
+.fa-user{
+    color: white;
+    font-size: 25px;
+}
+.logout-container{
+    display: flex;
+    gap: 100px;
+}
+.user-container{
+    display: flex;
+    gap: 10px;
+}
+
+.cartIcon{
+    display: flex;
+    column-gap: 5px;
+}
+.fa-cart-shopping{
+    color: white;
+    font-size: 30px;
+}
+.cartcount{
+    position: relative;
+    top: -5px;
+    font-size: 15px;
+    color: white;
+}
+
+.nav-logout{
+    width: 120px;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
 }
