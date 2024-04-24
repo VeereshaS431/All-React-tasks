@@ -1,0 +1,69 @@
+.main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    row-gap: 50px;
+}
+
+.btns{
+    display: flex;
+    column-gap: 30px;
+}
+.btn1{
+    width: 120px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    background-color: aquamarine;
+}
+.btn1:active{
+    background-color: rgb(20, 21, 21);
+    color: aliceblue;
+}
+
+.form-container{
+    border: 1px solid black;
+    height: 50vh;
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    flex-direction: column;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+.input-box{
+    display: flex;
+    flex-direction: column;
+}
+input{
+    width: 250px;
+    border-radius: 5px;
+    height: 30px;
+}
+.loginbtn{
+    margin-top:20px;
+}
+.loginbtn:active{
+    background-color: rgb(20, 21, 21);
+    color: aliceblue;
+}
+.error{
+    position: absolute;
+    margin-top: 150px;
+    margin-left: -40px;
+    color: red;
+}
+
+.forget{
+    margin-top: 15px;
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+}
