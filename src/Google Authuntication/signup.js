@@ -1,10 +1,12 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { auth } from "../firebase/config"
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import "./signup.css"
 import { sendPasswordResetEmail } from "firebase/auth/web-extension";
+import { DataShare } from "../route-stack/stack";
 export const Signup = () => {
+    const{loginMethod}=useContext(DataShare)
     const [userCredentials, setUserCredentials] = useState({
         email:null,
         password:null
@@ -64,6 +66,7 @@ export const Signup = () => {
                 const user = userCredential.user;
                 console.log(user)
                 alert("Login Successfully")
+                loginMethod()
                 setError("")
                  setUserCredentials({
                     ...userCredential, email:"",password:""

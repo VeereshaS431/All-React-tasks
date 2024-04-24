@@ -2,9 +2,42 @@ import { useContext } from "react"
 import { DataShare } from "../route-stack/stack"
 import { CustomNavbarExample } from "../components/navBarExaple"
 import "./cartpage.css"
+import {loadStripe} from '@stripe/stripe-js';
+
 
 export const AddCartPage = () => {
     const { addCartData,cartDelete, cartIncrement, cartDecrement } = useContext(DataShare)
+
+
+    const makePayment=async()=>{
+        const stripe = await loadStripe('pk_test_51P96L8SGiU9Du0RFQ7RcLdRqiSNOpiNxTQyUWxkGJZAPM67RLhTTFjjTeUTQQucj3jk66edrBqylXb5piD9w0HKg00jGA5kOiS');
+
+        const body={
+            products:addCartData
+        }
+        const headers={
+            "Content-Type":"application/json"
+        }
+        const response=await fetch("http://localhost:3000/api/create-checkout-session",{
+            method:"POST",
+            headers:headers,
+            body:JSON.stringify(body)
+        });
+
+        const session=await response.json();
+
+        const result=stripe.redirectToCheckout({
+            sessionId:session.id
+        })
+
+        if(result.error){
+            console.log(result.error);
+        }
+
+    }
+
+
+
     return (
         <>
         <CustomNavbarExample/>
@@ -47,7 +80,7 @@ export const AddCartPage = () => {
                                 }
                             </span>
                         </div>
-                        <button className="order">Place Order</button>
+                        <button className="order" onClick={makePayment}>Check Out</button>
                     </div>
 
                 </div>

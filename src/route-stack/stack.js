@@ -7,11 +7,13 @@ import { RegisterForm } from "../pages/registerPage"
 import { ProductPage } from "../pages/products"
 import { ProductDetails } from "../pages/productDetails"
 import { AddCartPage } from "../pages/Cartpage"
+import { Cancel } from "../components/cancel"
+import { Success } from "../components/success"
 
 
 export const DataShare = createContext()
 export const Navigation = () => {
-    const [login, setLogin] = useState(false)
+    const [login, setLogin] = useState(true)
     const [userData, setUserData] = useState([])
     const [loginUser, setLoginUser]=useState([])
     const [addCartData, setAddCartData]=useState([])
@@ -95,6 +97,8 @@ export const Navigation = () => {
                             <Route path="/products" Component={ProductPage}/>
                             <Route path="/products/:title/:productId" Component={ProductDetails}/>
                             <Route path="/addCartPage" Component={AddCartPage}/>
+                            <Route path="/cancel" Component={Cancel}/>
+                            <Route path="/success" Component={Success}/>
                         </Routes>
                         :
 
